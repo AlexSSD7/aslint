@@ -29,7 +29,6 @@ var ASL1013 = &analysis.Analyzer{
 					contains := false
 
 					contains = contains || strings.Contains(argStr, "\"")
-					contains = contains || strings.Contains(argStr, "'")
 					contains = contains || strings.Contains(argStr, "`")
 					contains = contains || strings.Contains(argStr, "--")
 					contains = contains || strings.Contains(argStr, ".")
