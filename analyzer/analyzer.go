@@ -25,6 +25,7 @@ func NewCombinedAnalyzer() *CombinedAnalyzer {
 			// ASL1011,
 			ASL2001,
 			// ASL2002, Temporary disabled as it apparently messes up with CGO
+			ASL1012,
 		},
 	}
 }

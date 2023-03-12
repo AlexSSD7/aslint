@@ -25,6 +25,7 @@ var ASL1003 = &analysis.Analyzer{
 					contains = contains || strings.HasPrefix(argStr, "can't")
 					contains = contains || strings.HasPrefix(argStr, "cant")
 					contains = contains || strings.HasPrefix(argStr, "cannot")
+					contains = contains || strings.HasPrefix(argStr, "could not")
 
 					if contains {
 						report(pass, arg.Pos(), "ASL1003", "use of generic error keywords like 'failed', 'unable', 'cannot' and similar is not allowed")
