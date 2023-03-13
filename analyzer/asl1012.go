@@ -38,6 +38,7 @@ var ASL1012 = &analysis.Analyzer{
 					contains = contains || strings.HasPrefix(argStr, "cant")
 					contains = contains || strings.HasPrefix(argStr, "cannot")
 					contains = contains || strings.HasPrefix(argStr, "could not")
+					contains = contains || strings.HasPrefix(argStr, "couldn't")
 
 					if contains {
 						reportFunc(argT.Pos())
