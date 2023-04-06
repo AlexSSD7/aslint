@@ -14,7 +14,7 @@ var ASL1004 = &analysis.Analyzer{
 	Name: "ASL1004",
 	Doc:  "Verifies that log15 log string is capitalized.",
 	Run: func(pass *analysis.Pass) (interface{}, error) {
-		processCommonLog15Funcs(pass, func(fn string, e []ast.Expr) {
+		processCommonLog15Funcs(pass, false, func(fn string, e []ast.Expr) {
 			if len(e) < 1 {
 				return
 			}
@@ -31,11 +31,12 @@ var ASL1004 = &analysis.Analyzer{
 				}
 			}
 		})
+
 		return nil, nil
 	},
 }
 
-func processCommonLog15Funcs(pass *analysis.Pass, processFn func(string, []ast.Expr)) {
+func processCommonLog15Funcs(pass *analysis.Pass, includeNew bool, processFn func(string, []ast.Expr)) {
 	iteratePassFile(pass, func(f *ast.File) {
 		ast.Inspect(f, func(n ast.Node) bool {
 			switch nt := n.(type) {
@@ -48,6 +49,10 @@ func processCommonLog15Funcs(pass *analysis.Pass, processFn func(string, []ast.E
 					case "Warn":
 					case "Info":
 					case "Debug":
+					case "New":
+						if !includeNew {
+							return true
+						}
 					default:
 						return true
 					}

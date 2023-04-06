@@ -16,7 +16,7 @@ var ASL1013 = &analysis.Analyzer{
 			report(pass, pos, "ASL1013", "log15 should not contain complex punctuation")
 		}
 
-		processCommonLog15Funcs(pass, func(fn string, e []ast.Expr) {
+		processCommonLog15Funcs(pass, false, func(fn string, e []ast.Expr) {
 			if len(e) < 1 {
 				return
 			}

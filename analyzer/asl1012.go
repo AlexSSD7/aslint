@@ -16,7 +16,7 @@ var ASL1012 = &analysis.Analyzer{
 			report(pass, pos, "ASL1012", "log15 error logs should start with 'Failed', not 'Unable', 'Cannot', and similar")
 		}
 
-		processCommonLog15Funcs(pass, func(fn string, e []ast.Expr) {
+		processCommonLog15Funcs(pass, false, func(fn string, e []ast.Expr) {
 			if fn != "Error" && fn != "Crit" {
 				// We look for Error and Crit log levels only
 				return

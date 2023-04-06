@@ -14,7 +14,7 @@ var ASL1005 = &analysis.Analyzer{
 		reportFunc := func(pos token.Pos) {
 			report(pass, pos, "ASL1005", "use of non-static log string in log15 is not allowed, please use log fields")
 		}
-		processCommonLog15Funcs(pass, func(fn string, e []ast.Expr) {
+		processCommonLog15Funcs(pass, false, func(fn string, e []ast.Expr) {
 			if len(e) < 1 {
 				return
 			}

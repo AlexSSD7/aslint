@@ -15,7 +15,7 @@ var ASL1009 = &analysis.Analyzer{
 			report(pass, pos, "ASL1009", "the amount of log15 context values should be non-odd as context items are key-value pairs")
 		}
 
-		processCommonLog15Funcs(pass, func(fn string, e []ast.Expr) {
+		processCommonLog15Funcs(pass, false, func(fn string, e []ast.Expr) {
 			if len(e) < 2 {
 				return
 			}

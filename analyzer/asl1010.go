@@ -15,7 +15,7 @@ var ASL1010 = &analysis.Analyzer{
 			report(pass, pos, "ASL1010", "log15 error logs should contain `error` field (NOT `err`, this is important)")
 		}
 
-		processCommonLog15Funcs(pass, func(fn string, e []ast.Expr) {
+		processCommonLog15Funcs(pass, false, func(fn string, e []ast.Expr) {
 			if fn != "Error" {
 				// We look for error log level only
 				return

@@ -15,11 +15,10 @@ var ASL1014 = &analysis.Analyzer{
 			report(pass, pos, "ASL1014", "log15 log should contain at least one context field")
 		}
 
-		processCommonLog15Funcs(pass, func(fn string, e []ast.Expr) {
+		processCommonLog15Funcs(pass, false, func(fn string, e []ast.Expr) {
 			if len(e) == 1 {
 				reportFunc(e[0].Pos())
 			}
-
 		})
 
 		return nil, nil
