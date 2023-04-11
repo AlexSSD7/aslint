@@ -1,7 +1,7 @@
 linters-settings:
   custom:
     aslint:
-      path: bin/aslint.so
+      path: aslint.so
   funlen:
     # Default: 60
     lines: 100
