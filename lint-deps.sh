@@ -4,7 +4,8 @@ mkdir -p bin/build
 cd bin/build
 git clone https://github.com/golangci/golangci-lint .
 git reset --hard da04413a8a1eefb8c10161c9f2b558138d01815c
-CGO_ENABLED=1 make build
+export CGO_ENABLED=1
+make build
 cd ..; cp build/golangci-lint .
 rm -rf build
 mkdir aslint-build; cd aslint-build
