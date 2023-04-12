@@ -24,7 +24,8 @@ var ASL2003 = &analysis.Analyzer{
 				switch n := np.(type) {
 				case *ast.CompositeLit:
 					switch n.Type.(type) {
-					case *ast.ArrayType:
+					case *ast.Ident:
+					default:
 						return true
 					}
 
