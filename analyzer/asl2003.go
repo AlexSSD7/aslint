@@ -23,10 +23,15 @@ var ASL2003 = &analysis.Analyzer{
 
 				switch n := np.(type) {
 				case *ast.CompositeLit:
+					switch n.Type.(type) {
+					case *ast.ArrayType:
+						return true
+					}
+
 					hasUnkeyed := false
 
 					for _, elt := range n.Elts {
-						if kv, ok := elt.(*ast.KeyValueExpr); !ok || kv.Key == nil {
+						if _, ok := elt.(*ast.KeyValueExpr); !ok {
 							hasUnkeyed = true
 							break
 						}
