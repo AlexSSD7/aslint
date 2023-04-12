@@ -28,6 +28,7 @@ func NewCombinedAnalyzer() *CombinedAnalyzer {
 			ASL1012,
 			ASL1013,
 			// ASL1014, Disabled because there are too many false positives
+			ASL2003,
 		},
 	}
 }
