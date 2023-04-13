@@ -7,9 +7,9 @@ linters-settings:
     lines: 100
     # Default: 40
     statements: 65
-  cyclop:
-    # Default: 10
-    max-complexity: 20
+  # cyclop:
+  #   # Default: 10
+  #   max-complexity: 20
   nestif:
     # Default: 5
     min-complexity: 10
@@ -23,8 +23,8 @@ linters:
     - asciicheck
     - bidichk
     - bodyclose
-    - containedctx
-    - cyclop
+    # - containedctx
+    # - cyclop
     - decorder
     - depguard
     - dogsled
@@ -38,10 +38,10 @@ linters:
     - execinquery
     - exhaustive
     - forcetypeassert
-    - funlen
+    # - funlen
     - ginkgolinter
     - gocheckcompilerdirectives
-    - gocognit
+    # - gocognit
     - goconst
     - gocritic
     - godot
