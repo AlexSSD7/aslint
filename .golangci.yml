@@ -92,3 +92,6 @@ issues:
         - gocritic
       # This complains about CGO
       text: "underef: could simplify"
+    - path: main.go
+      linters:
+        - maintidx
