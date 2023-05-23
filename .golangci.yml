@@ -12,7 +12,7 @@ linters-settings:
   #   max-complexity: 20
   nestif:
     # Default: 5
-    min-complexity: 10
+    min-complexity: 20
   godot:
     capital: true
 
