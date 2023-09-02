@@ -51,7 +51,7 @@ linters:
     - gomoddirectives
     - gomodguard
     - goprintffuncname
-    - gosec
+    # - gosec # Disabled in favor of using `gosec` CLI tool.
     - gosimple
     - govet
     - grouper
