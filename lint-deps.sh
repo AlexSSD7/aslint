@@ -3,7 +3,7 @@ rm -rf bin/build
 mkdir -p bin/build
 cd bin/build
 git clone https://github.com/golangci/golangci-lint .
-git reset --hard 3e8facb4949586ba9e5dccdd2f9f0fe727a5e335 # v1.51.2
+git reset --hard 411e0bbbd3096aa0ee2b924160629bdf2bc81d40 # v1.54.2
 export CGO_ENABLED=1
 make build
 cd ..; cp build/golangci-lint .
