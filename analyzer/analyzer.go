@@ -12,7 +12,7 @@ type CombinedAnalyzer struct {
 func NewCombinedAnalyzer() *CombinedAnalyzer {
 	return &CombinedAnalyzer{
 		analyzers: []*analysis.Analyzer{
-			ASL1001,
+			// ASL1001,
 			ASL1002,
 			ASL1003,
 			ASL1004,
